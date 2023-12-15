@@ -609,162 +609,13 @@ k = 1, \ldots, K.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;InlineBackend.figure_format = &#39;svg&#39;&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s1">&#39;mnist_784&#39;</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="mi">255</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
-
-<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/sklearn/datasets/_openml.py:1118,</span> in <span class="ni">fetch_openml</span><span class="nt">(name, version, data_id, data_home, target_column, cache, return_X_y, as_frame, n_retries, delay, parser, read_csv_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1116</span> <span class="c1"># obtain the data</span>
-<span class="g g-Whitespace">   </span><span class="mi">1117</span> <span class="n">url</span> <span class="o">=</span> <span class="n">_DATA_FILE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_description</span><span class="p">[</span><span class="s2">&quot;file_id&quot;</span><span class="p">])</span>
-<span class="ne">-&gt; </span><span class="mi">1118</span> <span class="n">bunch</span> <span class="o">=</span> <span class="n">_download_data_to_bunch</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1119</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1120</span>     <span class="n">return_sparse</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1121</span>     <span class="n">data_home</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1122</span>     <span class="n">as_frame</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">as_frame</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1123</span>     <span class="n">openml_columns_info</span><span class="o">=</span><span class="n">features_list</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1124</span>     <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1125</span>     <span class="n">target_columns</span><span class="o">=</span><span class="n">target_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1126</span>     <span class="n">data_columns</span><span class="o">=</span><span class="n">data_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1127</span>     <span class="n">md5_checksum</span><span class="o">=</span><span class="n">data_description</span><span class="p">[</span><span class="s2">&quot;md5_checksum&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span>     <span class="n">n_retries</span><span class="o">=</span><span class="n">n_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span>     <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1130</span>     <span class="n">parser</span><span class="o">=</span><span class="n">parser_</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span>     <span class="n">read_csv_kwargs</span><span class="o">=</span><span class="n">read_csv_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1134</span> <span class="k">if</span> <span class="n">return_X_y</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1135</span>     <span class="k">return</span> <span class="n">bunch</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">bunch</span><span class="o">.</span><span class="n">target</span>
-
-<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/sklearn/datasets/_openml.py:669,</span> in <span class="ni">_download_data_to_bunch</span><span class="nt">(url, sparse, data_home, as_frame, openml_columns_info, data_columns, target_columns, shape, md5_checksum, n_retries, delay, parser, read_csv_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="kn">from</span> <span class="nn">pandas.errors</span> <span class="kn">import</span> <span class="n">ParserError</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">no_retry_exception</span> <span class="o">=</span> <span class="n">ParserError</span>
-<span class="ne">--&gt; </span><span class="mi">669</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">categories</span> <span class="o">=</span> <span class="n">_retry_with_clean_cache</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>     <span class="n">url</span><span class="p">,</span> <span class="n">data_home</span><span class="p">,</span> <span class="n">no_retry_exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span> <span class="p">)(</span><span class="n">_load_arff_response</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>     <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">data_home</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">674</span>     <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>     <span class="n">output_type</span><span class="o">=</span><span class="n">output_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="n">openml_columns_info</span><span class="o">=</span><span class="n">features_dict</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span>     <span class="n">feature_names_to_select</span><span class="o">=</span><span class="n">data_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="n">target_names_to_select</span><span class="o">=</span><span class="n">target_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">680</span>     <span class="n">md5_checksum</span><span class="o">=</span><span class="n">md5_checksum</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">681</span>     <span class="n">n_retries</span><span class="o">=</span><span class="n">n_retries</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">682</span>     <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">683</span>     <span class="n">read_csv_kwargs</span><span class="o">=</span><span class="n">read_csv_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">686</span> <span class="k">return</span> <span class="n">Bunch</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span>     <span class="n">data</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">688</span>     <span class="n">target</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">692</span>     <span class="n">target_names</span><span class="o">=</span><span class="n">target_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">693</span> <span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/sklearn/datasets/_openml.py:59,</span> in <span class="ni">_retry_with_clean_cache.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kw)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">except</span> <span class="n">URLError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">raise</span>
-
-<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/sklearn/datasets/_openml.py:504,</span> in <span class="ni">_load_arff_response</span><span class="nt">(url, data_home, parser, output_type, openml_columns_info, feature_names_to_select, target_names_to_select, shape, md5_checksum, n_retries, delay, read_csv_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="k">def</span> <span class="nf">_load_arff_response</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>     <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="n">data_home</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="n">read_csv_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Load the ARFF data associated with the OpenML URL.</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span><span class="sd">     In addition of loading the data, this function will also check the</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="sd">         `output_array_type == &quot;pandas&quot;`.</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">504</span>     <span class="n">gzip_file</span> <span class="o">=</span> <span class="n">_open_openml_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data_home</span><span class="p">,</span> <span class="n">n_retries</span><span class="o">=</span><span class="n">n_retries</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>     <span class="k">with</span> <span class="n">closing</span><span class="p">(</span><span class="n">gzip_file</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">md5</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
-
-<span class="nn">File /opt/homebrew/lib/python3.11/site-packages/sklearn/datasets/_openml.py:175,</span> in <span class="ni">_open_openml_url</span><span class="nt">(openml_path, data_home, n_retries, delay)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>                 <span class="n">opener</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="k">with</span> <span class="n">opener</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">file_name</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>                 <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">fsrc</span><span class="p">,</span> <span class="n">fdst</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>         <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">fdst</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shutil.py:197,</span> in <span class="ni">copyfileobj</span><span class="nt">(fsrc, fdst, length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="n">fdst_write</span> <span class="o">=</span> <span class="n">fdst</span><span class="o">.</span><span class="n">write</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc_read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>         <span class="k">break</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py:460,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">460</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="c1"># clip the read to the &quot;end of response&quot;</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py:592,</span> in <span class="ni">HTTPResponse._read_chunked</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">589</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="k">break</span>
-<span class="ne">--&gt; </span><span class="mi">592</span> <span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">chunk_left</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">594</span>     <span class="n">amt</span> <span class="o">-=</span> <span class="n">chunk_left</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py:631,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span> <span class="k">def</span> <span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">631</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:706,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">706</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py:1278,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1275</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1276</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1277</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1278</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File /opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py:1134,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1134</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1135</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <section id="visualize-data">
 <h3>Visualize data<a class="headerlink" href="#visualize-data" title="Permalink to this heading">#</a></h3>
 <p>Visualize some random samples:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/ef04f4b0b4d9bb631b203f43830198ee750f8fa5ecaf3d3664d038266eece4bb.svg" src="../_images/ef04f4b0b4d9bb631b203f43830198ee750f8fa5ecaf3d3664d038266eece4bb.svg" /></div>
+<img alt="../_images/726a260f016a30ac4369f965691818307b012076d2cc15db6d8acd39f8af7627.svg" src="../_images/726a260f016a30ac4369f965691818307b012076d2cc15db6d8acd39f8af7627.svg" /></div>
 </div>
 </section>
 <section id="splitting-into-train-and-test">
@@ -809,11 +660,11 @@ k = 1, \ldots, K.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 40.8 s, sys: 1.71 s, total: 42.5 s
-Wall time: 28.1 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2min 21s, sys: 7.69 s, total: 2min 29s
+Wall time: 17.3 s
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:460: ConvergenceWarning: lbfgs failed to converge (status=1):
 STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
 
 Increase the number of iterations (max_iter) or scale the data as shown in:
@@ -849,14 +700,14 @@ Please also refer to the documentation for alternative solver options:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.65095773e-04, 1.43385260e-07, 1.14780168e-05, 2.99636017e-01,
-        5.98926346e-07, 6.39615667e-01, 1.80372814e-07, 1.76480310e-07,
-        5.86493420e-02, 1.92130044e-03],
-       [1.21475181e-04, 1.49673625e-06, 1.08891109e-03, 1.24093043e-05,
+        5.98926347e-07, 6.39615668e-01, 1.80372814e-07, 1.76480310e-07,
+        5.86493419e-02, 1.92130044e-03],
+       [1.21475182e-04, 1.49673625e-06, 1.08891110e-03, 1.24093043e-05,
         9.14920772e-01, 1.95035318e-04, 1.16798504e-04, 1.85831413e-04,
-        1.03925873e-02, 7.29646828e-02],
-       [9.63965076e-09, 9.52335705e-09, 1.80277138e-07, 4.04423620e-09,
-        9.99908083e-01, 2.32334829e-06, 7.00253101e-06, 8.06028699e-06,
-        6.62953819e-06, 6.76977960e-05]])
+        1.03925874e-02, 7.29646830e-02],
+       [9.63965081e-09, 9.52335710e-09, 1.80277139e-07, 4.04423620e-09,
+        9.99908083e-01, 2.32334830e-06, 7.00253106e-06, 8.06028704e-06,
+        6.62953821e-06, 6.76977962e-05]])
 </pre></div>
 </div>
 </div>
@@ -886,7 +737,7 @@ Please also refer to the documentation for alternative solver options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c34323af1bd3ecbf2647ce89678ab4f44ada5d6428715e4d48105a70dc2ceae0.svg" src="../_images/c34323af1bd3ecbf2647ce89678ab4f44ada5d6428715e4d48105a70dc2ceae0.svg" /></div>
+<img alt="../_images/9bd55da881773c0a716162ae37687c79645bf7680367d9f5892e2c5caf68a93a.svg" src="../_images/9bd55da881773c0a716162ae37687c79645bf7680367d9f5892e2c5caf68a93a.svg" /></div>
 </div>
 <p>Plot some samples with predictions and ground truths:</p>
 <div class="cell docutils container">
@@ -896,7 +747,7 @@ Please also refer to the documentation for alternative solver options:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8381dfbf32a8137f0e592bdc7bca51e2588fef2569f1718ca10a1ed4c0adc17.svg" src="../_images/f8381dfbf32a8137f0e592bdc7bca51e2588fef2569f1718ca10a1ed4c0adc17.svg" /></div>
+<img alt="../_images/43aa8de24a3073a99d725319b333bd4316def13f48444fdc41fb86c132f0729b.svg" src="../_images/43aa8de24a3073a99d725319b333bd4316def13f48444fdc41fb86c132f0729b.svg" /></div>
 </div>
 </section>
 </section>
